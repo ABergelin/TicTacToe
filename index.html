@@ -8,6 +8,8 @@
 	<body>
 		<script>
 			
+			let userChoice = "";
+			
 			function computerPlay() {
 				let number = Math.floor(Math.random() * 3);
 				let choice = "";
@@ -81,8 +83,16 @@
 			
 			
 			}
+			userChoice = prompt('Please enter your selection:');
+			if (userChoice.toUpperCase() != "ROCK" && userChoice.toUpperCase() != "SCISSORS" &&
+			userChoice.toUpperCase() != "PAPER") {
+				alert("You have selected an invalid choice.")
 			
-			console.log(playRound("ROCK", computerPlay()));
+			}
+			
+			
+			
+			console.log(playRound(userChoice, computerPlay()));
 		
 		
 		
