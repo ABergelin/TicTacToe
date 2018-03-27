@@ -1,113 +1,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	
-	
-	
+		<link type="text/css" rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-		<script>
-			
-			let userChoice = "";
-			
-			function computerPlay() {
-				let number = Math.floor(Math.random() * 3);
-				let choice = "";
-				
-				switch (number) {
-					case 0:
-						choice = "ROCK";
-						break;
-					case 1:
-						choice = "PAPER";
-						break;
-					case 2:
-						choice = "SCISSORS";
-						break;
-					default:
-						choice = "This isn't Rock, Paper, Scissors, Lizard, Spock";
-				}
-				
-				return choice;
-			
-			}
-			
-			console.log(computerPlay());
-			
-			function playRound(player1, computerSelection) {
-				let player1Choice = player1.toUpperCase();
-				let outcome = "WIN";
-				let message = "";
-				
-				switch (player1Choice) {
-					case "ROCK":
-						if (computerSelection === "ROCK"){
-							outcome = "DRAW";
-						} else if (computerSelection === "SCISSORS"){
-							outcome = "WIN";
-						} else if (computerSelection = "PAPER"){
-							outcome = "LOSE";
-						}
-						break;
-					
-					case "SCISSORS":
-						if (computerSelection === "ROCK"){
-							outcome = "LOSE";
-						} else if (computerSelection === "SCISSORS"){
-							outcome = "DRAW";
-						} else if (computerSelection = "PAPER"){
-							outcome = "WIN";
-						}
-						break;
-					
-					case "PAPER":
-						if (computerSelection === "ROCK"){
-							outcome = "WIN";
-						} else if (computerSelection === "SCISSORS"){
-							outcome = "LOSE";
-						} else if (computerSelection = "PAPER"){
-							outcome = "DRAW";
-						}
-						break;	
-				}
-				
-				if (outcome === "WIN"){
-					message = `You won! ${player1Choice} beats ${computerSelection}`;
-				} else if (outcome === "LOSE"){
-					message = `You lost! ${computerSelection} beats ${player1Choice}`;
-				} else if (outcome === "DRAW"){
-					message = "It was a draw!";
-				}
-			
-				return message;
-			
-			
-			}
-			userChoice = prompt('Please enter your selection:');
-			if (userChoice.toUpperCase() != "ROCK" && userChoice.toUpperCase() != "SCISSORS" &&
-			userChoice.toUpperCase() != "PAPER") {
-				alert("You have selected an invalid choice.")
-			
-			}
-			
-			
-			
-			console.log(playRound(userChoice, computerPlay()));
-		
-		
-		
-		
-		</script>
-	
-	
-	
-	
-	
-	
+		<div class="bg">
+			<div id="greeting">
+				<welcome>Click a button to play</welcome>
+			</div>
+			<div id="controls">
+				<button class="btn">Rock</button>
+				<button class="btn">Paper</button>
+				<button class="btn">Scissors</button>
+			</div>
+			<div id="result">
+			</div>
+		</div>
+		<script src="script.js"></script>
 	</body>
-
-
-
-
 
 </html>
