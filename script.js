@@ -64,9 +64,9 @@ function playRound(player1, computerSelection) {
 	}
 	
 	if (outcome === "WIN"){
-		message = `You won! ${player1Choice} beats ${computerSelection}`;
+		message = `You won! ${player1Choice} beats ${computerSelection}.`;
 	} else if (outcome === "LOSE"){
-		message = `You lost! ${computerSelection} beats ${player1Choice}`;
+		message = `You lost! ${computerSelection} beats ${player1Choice}.`;
 	} else if (outcome === "DRAW"){
 		message = "It was a draw!";
 	}
@@ -88,7 +88,11 @@ btns.forEach((btn) => {
 		userChoice = btn.textContent.toUpperCase();
 		//console.log(userChoice);
 		if (userChoice != "") {
-			console.log(playRound(userChoice, computerPlay()));
+			//alert(playRound(userChoice, computerPlay()));
+			
+			var resultField = document.querySelector("#resultField");
+			resultField.textContent = playRound(userChoice, computerPlay());
+			
 		}
 	});
 
